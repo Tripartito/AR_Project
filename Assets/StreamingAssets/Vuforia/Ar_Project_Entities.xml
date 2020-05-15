@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
+  <Tracking>
+    <ImageTarget name="Player_4_Cleric" size="1.000000 1.000000" />
+    <ImageTarget name="Player_3_Sorcerer" size="1.000000 1.000000" />
+    <ImageTarget name="Player_2_Fighter" size="1.000000 1.000000" />
+    <ImageTarget name="Player_1_Mage" size="1.000000 1.000000" />
+    <ImageTarget name="Enemy_4_Medium_Size" size="1.000000 1.000000" />
+    <ImageTarget name="Enemy_3_Medium_Size" size="1.000000 1.000000" />
+    <ImageTarget name="Enemy_2_Medium_Size" size="1.000000 1.000000" />
+    <ImageTarget name="Enemy_1_Medium_Size" size="1.000000 1.000000" />
+    <ImageTarget name="Player_1_Backside_test" size="1.000000 1.000000" />
+    <ImageTarget name="Enemy_1_Large_Size" size="1.000000 1.000000" />
+  </Tracking>
+</QCARConfig>
