@@ -344,6 +344,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   numSides: 8
   rollResult: 0
+  rollFinished: 1
 --- !u!1 &9053135162070848803
 GameObject:
   m_ObjectHideFlags: 0

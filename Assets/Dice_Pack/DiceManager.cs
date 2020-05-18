@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.Remoting.Messaging;
+using System.Text;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -23,10 +24,14 @@ public class DiceManager : MonoBehaviour
         take_lowest
     }
 
-    public dice_types currDiceType = dice_types.d20;
-    public dice_modes currDiceMode = dice_modes.add;
+    public dice_types diceType = dice_types.d20;
+    private Dropdown diceTypeUI;
+    public dice_modes diceMode = dice_modes.add;
+    private Dropdown diceModeUI;
     public uint numDice = 1;
+    private InputField numDiceUI;
     public int diceModifier = 0;
+    private InputField diceModifierUI;
 
     private List<DiceScript> currentDice = new List<DiceScript>();
     public GameObject[] dicePrefabs;
@@ -44,7 +49,23 @@ public class DiceManager : MonoBehaviour
     {
         gravityGround = GameObject.Find("Bowl_Wall_0");
 
-        currentDice.Add(Instantiate(dicePrefabs[(int)currDiceType], gameObject.transform.position + new Vector3(0, bowlParameters.y, 0), Quaternion.identity).GetComponent<DiceScript>());
+        diceTypeUI = GameObject.Find("Dice_Type_Dropdown").GetComponent<Dropdown>();
+        diceModeUI = GameObject.Find("Dice_Mode_Dropdown").GetComponent<Dropdown>();
+        numDiceUI = GameObject.Find("Dice_Amount").GetComponent<InputField>();
+        diceModifierUI = GameObject.Find("Dice_Modifier").GetComponent<InputField>();
+
+        if (diceTypeUI != null)
+        {
+            diceType = (dice_types)diceTypeUI.value;
+            currentDice.Add(Instantiate(dicePrefabs[(int)diceType], gameObject.transform.position + new Vector3(0, bowlParameters.y, 0), Quaternion.identity).GetComponent<DiceScript>());
+        }
+        else
+            Debug.LogError("Dice Type UI not recognized in DiceManager.cs!");
+
+        if (diceModeUI != null)
+            diceMode = (dice_modes)diceModeUI.value;
+        else
+            Debug.LogError("Dice Mode UI not recognized in DiceManager.cs!");
     }
 
     // Update is called once per frame
@@ -62,15 +83,15 @@ public class DiceManager : MonoBehaviour
         {
             Physics.gravity = gravityGround.transform.rotation * new Vector3(0f, -9.81f, 0f);
 
-            bool finished = true;
+            bool rollingFinished = true;
             foreach (DiceScript dice in currentDice)
-                if (!dice.gameObject.GetComponent<Rigidbody>().isKinematic)
+                if (!dice.rollFinished)
                 {
-                    finished = false;
+                    rollingFinished = false;
                     break;
                 }
 
-            if (finished)
+            if (rollingFinished)
             {
                 int finalResult = 0;
 

@@ -17,8 +17,9 @@ public class DiceScript : MonoBehaviour {
 	private float groundTimer = 1f;
 	private GameObject gravityGround;
 
-	[ReadOnly(true)]
+	[Header("Read Only"), ReadOnly(true)]
 	public int rollResult;
+	public bool rollFinished = true;
 
 	// Use this for initialization
 	void Awake () {
@@ -36,35 +37,39 @@ public class DiceScript : MonoBehaviour {
 			else
 				listFinished = true;
 		}
+
+		numSides = (uint)sides.Count();
 	}
 
 	// Update is called once per frame
 	void Update () {
-		if (thresholdCrossedAt != 0f && rb.isKinematic == false && Time.time - thresholdCrossedAt > groundTimer)
+		if (!rollFinished && thresholdCrossedAt != 0f && Time.time - thresholdCrossedAt > groundTimer)
 		{
 			Vector3 target = gameObject.transform.position + gravityGround.transform.up;	// Dice Pos + Ground Vector
-			GameObject nearestSide = sides[0];
-			float nearestDistance = (target - nearestSide.transform.position).magnitude;    // Nearest distance to target
 
-			foreach (GameObject go in sides)
+			float nearestDistance = (target - sides[0].transform.position).magnitude;	// Default roll at 1
+			rollResult = 1;
+
+			for (int i = 1; i < numSides; ++i)
 			{
-				float goDistance = (target - go.transform.position).magnitude;
+				float goDistance = (target - sides[i].transform.position).magnitude;
 				if (goDistance < nearestDistance)
 				{
-					nearestSide = go;
+					rollResult = i + 1;
 					nearestDistance = goDistance;
 				}
 			}
 
-			rollResult = int.Parse(nearestSide.name.Remove(0, 5));
 			rb.isKinematic = true;
+			rollFinished = true;
 		}
 	}
 
 	public void ThrowMe()
 	{
+		rollFinished = false;       // Reset
 		rb.isKinematic = false;     // Reset
-		thresholdCrossedAt = 0f;    // Reset
+		thresholdCrossedAt = 0f;	// Reset
 
 		transform.position = gravityGround.transform.position + gravityGround.transform.up * 2f;    // Reposition
 		transform.rotation = UnityEngine.Random.rotation;           // Random rotate
