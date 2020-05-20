@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
   <Tracking>
+    <ImageTarget name="AR_Logo_Game_Master" size="1.000000 1.005025" />
     <ImageTarget name="AR_Logo" size="1.000000 1.005025" />
-    <ImageTarget name="COMBAT_MAP_Top_Right_Target" size="1.000000 1.000000" />
-    <ImageTarget name="COMBAT_MAP_Top_Left_Target" size="1.000000 1.000000" />
-    <ImageTarget name="COMBAT_MAP_Bottom_Right_Target" size="1.000000 1.000000" />
-    <ImageTarget name="COMBAT_MAP_Bottom_Left_Target" size="1.000000 1.000000" />
   </Tracking>
 </QCARConfig>
