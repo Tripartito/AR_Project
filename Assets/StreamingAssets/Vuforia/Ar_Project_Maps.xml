@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
   <Tracking>
+    <ImageTarget name="Explore_Tile_9" size="1.000000 1.000000" />
+    <ImageTarget name="Explore_Tile_8" size="1.000000 1.000000" />
+    <ImageTarget name="Explore_Tile_7" size="1.000000 1.000000" />
+    <ImageTarget name="Explore_Tile_6" size="1.000000 1.000000" />
+    <ImageTarget name="Explore_Tile_5" size="1.000000 1.000000" />
+    <ImageTarget name="Explore_Tile_4" size="1.000000 1.000000" />
+    <ImageTarget name="Explore_Tile_3" size="1.000000 1.000000" />
+    <ImageTarget name="Explore_Tile_2" size="1.000000 1.000000" />
+    <ImageTarget name="Explore_Tile_1" size="1.000000 1.000000" />
     <ImageTarget name="AR_Logo_Game_Master" size="1.000000 1.005025" />
     <ImageTarget name="AR_Logo" size="1.000000 1.005025" />
   </Tracking>
