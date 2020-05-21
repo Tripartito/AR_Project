@@ -16,4 +16,9 @@ public class GameManagement : MonoBehaviour
     {
         
     }
+
+    public void Switch()
+    {
+        user_is_GM = !user_is_GM;
+    }
 }
