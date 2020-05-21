@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HiddenEntity : MonoBehaviour
+public class FOW_Unit : MonoBehaviour
 {
     public bool is_visible = false;
 
@@ -11,7 +11,7 @@ public class HiddenEntity : MonoBehaviour
     public bool GM_target_found = false;
 
     [Header("Actual Prefab or GameObject we will render")]
-    public GameObject GameObject_to_show;
+    private GameObject GameObject_to_show;
     private MatchTransform GO_to_show_trans;
 
 
@@ -36,7 +36,7 @@ public class HiddenEntity : MonoBehaviour
 
         manager = GameObject.Find("GameManager").GetComponent<GameManagement>();
 
-
+        GameObject_to_show = gameObject.transform.Find("GOs to show").gameObject;
         GO_to_show_trans = GameObject_to_show.GetComponent<MatchTransform>();
 
         GameObject_to_show.SetActive(false);
