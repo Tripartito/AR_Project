@@ -52,6 +52,7 @@ public class FOW_Unit : MonoBehaviour
         if (player_tracker.is_found == true)
         {
             GameObject_to_show.SetActive(true);
+            is_visible = true;
             GO_to_show_trans.GO_to_match = player_visible;
         }
         else if (GM_tracker.is_found == true)
@@ -59,10 +60,14 @@ public class FOW_Unit : MonoBehaviour
             if (manager.user_is_GM == true)
             {
                 GameObject_to_show.SetActive(true);
+                is_visible = true;
                 GO_to_show_trans.GO_to_match = GM_visible;
             }
             else
+            {
                 GameObject_to_show.SetActive(false);
+                is_visible = false;
+            }
         }
         else if (player_tracker.is_found == false && GM_tracker.is_found == false)
         {
