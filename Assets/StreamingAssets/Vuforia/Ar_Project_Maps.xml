@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
   <Tracking>
+    <ImageTarget name="Exploration_Tile_3_GM_Version" size="1.000000 1.000000" />
+    <ImageTarget name="Exploration_Tile_2_GM_Version" size="1.000000 1.000000" />
+    <ImageTarget name="Exploration_Tile_1_GM_Version" size="1.000000 1.000000" />
     <ImageTarget name="Explore_Tile_9" size="1.000000 1.000000" />
     <ImageTarget name="Explore_Tile_8" size="1.000000 1.000000" />
     <ImageTarget name="Explore_Tile_7" size="1.000000 1.000000" />

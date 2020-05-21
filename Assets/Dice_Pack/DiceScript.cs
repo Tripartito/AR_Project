@@ -93,7 +93,7 @@ public class DiceScript : MonoBehaviour {
 		rb.isKinematic = false;     // Reset
 		thresholdCrossedAt = 0f;	// Reset
 
-		transform.position = gravityGround.transform.rotation * spawnPos;    // Reposition
+		transform.position = gravityGround.transform.position + gravityGround.transform.rotation * spawnPos;    // Reposition
 		transform.rotation = UnityEngine.Random.rotation;           // Random rotate
 
 		rb.AddForce(gravityGround.transform.up * 10f, ForceMode.Impulse);   // Move Upwards from bowl
