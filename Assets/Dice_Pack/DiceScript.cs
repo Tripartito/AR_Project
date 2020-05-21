@@ -3,19 +3,25 @@ using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Net.Sockets;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityScript.Steps;
 
 public class DiceScript : MonoBehaviour {
 
-	static Rigidbody rb;
+	private Rigidbody rb;
 	public uint numSides;
 	private List<GameObject> sides = new List<GameObject>();
+
+	private GameObject camera;
+	private TextMesh rollText;
 
 	private float thresholdCrossedAt;
 	private float groundTimer = 1f;
 	private GameObject gravityGround;
+
+	public Vector3 spawnPos = new Vector3();
 
 	[Header("Read Only"), ReadOnly(true)]
 	public int rollResult;
@@ -24,7 +30,10 @@ public class DiceScript : MonoBehaviour {
 	// Use this for initialization
 	void Awake () {
 		rb = GetComponent<Rigidbody>();
+
 		gravityGround = GameObject.Find("Bowl_Wall_0");
+		rollText = transform.Find("Dice_Roll_Text").gameObject.GetComponent<TextMesh>();
+		camera = GameObject.Find("ARCamera");
 
 		int i = 1;
 		bool listFinished = false;
@@ -55,23 +64,36 @@ public class DiceScript : MonoBehaviour {
 				float goDistance = (target - sides[i].transform.position).magnitude;
 				if (goDistance < nearestDistance)
 				{
-					rollResult = i + 1;
+					rollResult = i + 1;	//Array pos is roll number - 1
 					nearestDistance = goDistance;
 				}
 			}
 
+			rollText.gameObject.transform.position = gameObject.transform.position + gravityGround.transform.up * 0.5f;
+			rollText.text = rollResult.ToString();
+
+			transform.SetParent(gravityGround.transform.parent, true);
+
 			rb.isKinematic = true;
 			rollFinished = true;
+		}
+
+		if (rollFinished)
+		{
+			rollText.gameObject.transform.LookAt(camera.transform);
+			rollText.gameObject.transform.Rotate(new Vector3(0f, 180f, 0f), Space.Self);
 		}
 	}
 
 	public void ThrowMe()
 	{
+		rollText.text = "";
+
 		rollFinished = false;       // Reset
 		rb.isKinematic = false;     // Reset
 		thresholdCrossedAt = 0f;	// Reset
 
-		transform.position = gravityGround.transform.position + gravityGround.transform.up * 2f;    // Reposition
+		transform.position = gravityGround.transform.rotation * spawnPos;    // Reposition
 		transform.rotation = UnityEngine.Random.rotation;           // Random rotate
 
 		rb.AddForce(gravityGround.transform.up * 10f, ForceMode.Impulse);   // Move Upwards from bowl
