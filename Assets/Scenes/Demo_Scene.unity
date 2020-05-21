@@ -2104,6 +2104,16 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 1286070604}
+    - target: {fileID: 1591623315547180116, guid: 78deaa93590ddb44a8547433f55defe4,
+        type: 3}
+      propertyPath: mTrackableName
+      value: Exploration_Tile_3_GM_Version
+      objectReference: {fileID: 0}
+    - target: {fileID: 1591623315547180116, guid: 78deaa93590ddb44a8547433f55defe4,
+        type: 3}
+      propertyPath: mDataSetPath
+      value: Vuforia/Ar_Project_Maps.xml
+      objectReference: {fileID: 0}
     - target: {fileID: 1591623316300120860, guid: 78deaa93590ddb44a8547433f55defe4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2692,7 +2702,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: d05009006fad46d3b423d4acf89d1d67, type: 3}
+        m_Texture: {fileID: 2800000, guid: abbdb7f1988d4c9d911654c84599eb0b, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats: []
@@ -3519,7 +3529,7 @@ PrefabInstance:
     - target: {fileID: 1591623315547180116, guid: 78deaa93590ddb44a8547433f55defe4,
         type: 3}
       propertyPath: mTrackableName
-      value: Explore_Tile_9
+      value: Exploration_Tile_1_GM_Version
       objectReference: {fileID: 0}
     - target: {fileID: 1591623315547180116, guid: 78deaa93590ddb44a8547433f55defe4,
         type: 3}
@@ -3973,7 +3983,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 62264fcfaa7a48d1b900260d7e5f336e, type: 3}
+        m_Texture: {fileID: 2800000, guid: ab89d43c6b9f4a81a7e8cb7a25550c98, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats: []
@@ -4345,7 +4355,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: 'Enemy_4_Medium_SizeMaterial
+  m_Name: 'Exploration_Tile_2_GM_VersionMaterial
 
     -30640'
   m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
@@ -4360,7 +4370,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: e96b348575a74743af95beefcc1d2b06, type: 3}
+        m_Texture: {fileID: 2800000, guid: 497c5357e69e4cc881ec737445b755ad, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats: []
@@ -5427,7 +5437,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: 'Explore_Tile_9Material
+  m_Name: 'Exploration_Tile_1_GM_VersionMaterial
 
     -30098'
   m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
@@ -5442,7 +5452,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: e50a8697deb84d4c9c09493bc71ed8eb, type: 3}
+        m_Texture: {fileID: 2800000, guid: 172a8640672d4374a4428c5d767aafc7, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats: []
@@ -6635,7 +6645,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: 'Enemy_4_Medium_SizeMaterial
+  m_Name: 'Exploration_Tile_3_GM_VersionMaterial
 
     -92500'
   m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
@@ -6650,7 +6660,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: e96b348575a74743af95beefcc1d2b06, type: 3}
+        m_Texture: {fileID: 2800000, guid: a26c6cd0df4d4642b515f0769e72bca3, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats: []
@@ -7457,7 +7467,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 7ebe701269f94ce892368d229c841455, type: 3}
+        m_Texture: {fileID: 2800000, guid: e397bb8a46db458197f0e74491905d77, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats: []
@@ -8072,6 +8082,16 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 802770730}
+    - target: {fileID: 1591623315547180116, guid: 78deaa93590ddb44a8547433f55defe4,
+        type: 3}
+      propertyPath: mTrackableName
+      value: Exploration_Tile_2_GM_Version
+      objectReference: {fileID: 0}
+    - target: {fileID: 1591623315547180116, guid: 78deaa93590ddb44a8547433f55defe4,
+        type: 3}
+      propertyPath: mDataSetPath
+      value: Vuforia/Ar_Project_Maps.xml
+      objectReference: {fileID: 0}
     - target: {fileID: 1591623316300120860, guid: 78deaa93590ddb44a8547433f55defe4,
         type: 3}
       propertyPath: m_LocalPosition.x

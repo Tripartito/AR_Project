@@ -17,8 +17,8 @@ MonoBehaviour:
     ufoLicenseKey: QWNYS2dGYi8vLy8vQUFBQUtPcU1IRXhaTDBSUmxPVFpIeG5PYzBPRVFQY1pEa2VFWXpWd2k0UlAzWHYzVmpSME4zKzRKWlY2QkhYT3d1WmhVdy9iOVcrNnd1QWxHQUg0cTNDdUR6KzV4cG5KaHIwemEwYkFXUG9MTWJJUWZNQ1lWaUlvaFZaTXRjTDBTV3dZS3dnMGZSbS93dWg4N3JVTVFGWU5XaWtGWmU2NjNzNzBZbU1CNWZ4RWV6M2s5STQ4THU3b09WQVl4MVRNdTdIMUhOR1RzOEtsaEtMemI5NlQvOEF0OHlpeCtvcStlQjAvRkFuMFlZN2xnT0JvRGZ5YThCalVJNDVEQWM3ZmQ3aDVQUERNeDFWU2M3S0VaRWxCVlVpTDNua1RZSUVQQU1MMHY4eDdROEh3TGNxaldKVGtSUHdZaDVacVRDcklENFc2Y0hLc1pYbGJvRmdCd3o2Qk9qa295OGFRajJxK0VteEE1QjR2d0NldHluSVg=
     delayedInitialization: 0
     cameraDeviceModeSetting: -1
-    maxSimultaneousImageTargets: 10
-    maxSimultaneousObjectTargets: 10
+    maxSimultaneousImageTargets: 20
+    maxSimultaneousObjectTargets: 20
     useDelayedLoadingObjectTargets: 0
     modelTargetRecoWhileExtendedTracked: 0
     version: 8.6.10
@@ -40,6 +40,6 @@ MonoBehaviour:
     autoInitTracker: 0
     autoStartTracker: 0
   webcam:
-    deviceNameSetInEditor: HD Webcam
+    deviceNameSetInEditor: DroidCam Source 3
     turnOffWebCam: 0
     renderTextureLayer: 30
