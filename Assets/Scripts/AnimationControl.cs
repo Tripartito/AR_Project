@@ -35,7 +35,7 @@ public class AnimationControl : MonoBehaviour
             state = States.Attack;
         }
 
-        else if (Mathf.Abs((gameObject.transform.position.magnitude - last_position.magnitude)) > 0.01f)
+        else if (Mathf.Abs((gameObject.transform.position.magnitude - last_position.magnitude)) > 0.1f)
         {
             timer = Time.time;
             state = States.Move;
