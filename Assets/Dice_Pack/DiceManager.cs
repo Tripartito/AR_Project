@@ -234,7 +234,7 @@ public class DiceManager : MonoBehaviour
 
         for (int i = 0; i < diceNum; ++i)
         {
-            GameObject diceGO = Instantiate(dicePrefabs[(int)diceType], gravityGround.transform.rotation * spawnLocations[i], Quaternion.identity);
+            GameObject diceGO = Instantiate(dicePrefabs[(int)diceType], gravityGround.transform.position + gravityGround.transform.rotation * spawnLocations[i], Quaternion.identity);
             diceGO.transform.SetParent(gravityGround.transform.parent, true);
 
             DiceScript diceScript = diceGO.GetComponent<DiceScript>();
