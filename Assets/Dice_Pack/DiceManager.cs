@@ -103,15 +103,7 @@ public class DiceManager : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
-        {
-            foreach (DiceScript dice in currentDice)
-                dice.ThrowMe();
-
-            roll_string = "";
-            //rollTextComp.text = "";
-            rollTextMeshComp.text = "";
-            rolling = true;
-        }
+            MakeRoll();
 
         if (rolling)
         {
@@ -136,6 +128,17 @@ public class DiceManager : MonoBehaviour
             rollTextMeshComp.gameObject.transform.LookAt(camera.transform);
             rollTextMeshComp.gameObject.transform.Rotate(new Vector3(0f, 180f, 0f), Space.Self);
         }
+    }
+
+    public void MakeRoll()
+    {
+        foreach (DiceScript dice in currentDice)
+            dice.ThrowMe();
+
+        roll_string = "";
+        //rollTextComp.text = "";
+        rollTextMeshComp.text = "";
+        rolling = true;
     }
 
     private void CalculateThrow()
